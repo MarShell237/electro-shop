@@ -65,48 +65,9 @@
         <section class="section" id="product">
             <h2>Produits en vedette</h2>
             <div class="products-grid">
-                <div class="product-card" data-category="smartphones">
-                    <img src="../images/phone.png" alt="Smartphone">
-                    <h3>Smartphone Ultra-rapide</h3>
-                    <p>Un smartphone performant pour tous vos besoins, avec un design moderne.</p>
-                    <span class="price">35000FCFA</span>
-                    <a href="https://wa.me/237695947432?text=Bonjour, je suis intéressé par le produit Smartphone Ultra-rapide." class="btn">Achetez maintenant</a>
-                </div>
-                <div class="product-card" data-category="laptops">
-                    <img src="../images/laptop.jpg" alt="Ordinateur Portable">
-                    <h3>Ordinateur Portable Haute Performance</h3>
-                    <p>Un ordinateur portable idéal pour le travail et les loisirs, avec une batterie longue durée.</p>
-                    <span class="price">85000FCFA</span>
-                    <a href="https://wa.me/237695947432?text=Bonjour, je suis intéressé par l'Ordinateur Portable Haute Performance." class="btn">Achetez maintenant</a>
-                </div>
-                <div class="product-card" data-category="tablets">
-                    <img src="../images/tablets.png" alt="Tablette">
-                    <h3>Tablette Android</h3>
-                    <p>La tablette idéale pour le divertissement et la productivité, légère et rapide.</p>
-                    <span class="price">25000FCFA</span>
-                    <a href="https://wa.me/237695947432?text=Bonjour, je suis intéressé par la Tablette Android." class="btn">Achetez maintenant</a>
-                </div>
-                <div class="product-card" data-category="headphones">
-                    <img src="../images/headphone.png" alt="Casque Audio">
-                    <h3>Casque Audio Bluetooth</h3>
-                    <p>Un casque audio avec une qualité sonore exceptionnelle et une connexion sans fil.</p>
-                    <span class="price">15000FCFA</span>
-                    <a href="https://wa.me/237695947432?text=Bonjour, je suis intéressé par le Casque Audio Bluetooth." class="btn">Achetez maintenant</a>
-                </div>
-                <div class="product-card" data-category="gaming">
-                    <img src="../images/gaming.png" alt="Accessoires Gaming">
-                    <h3>Accessoires Gaming</h3>
-                    <p>Améliorez votre expérience de jeu avec nos accessoires de qualité supérieure.</p>
-                    <span class="price">20000FCFA</span>
-                    <a href="https://wa.me/237695947432?text=Bonjour, je suis intéressé par les Accessoires Gaming." class="btn">Achetez maintenant</a>
-                </div>
-                <div class="product-card" data-category="wearables">
-                    <img src="../images/wearables.png" alt="Montre Connectée">
-                    <h3>Montre Connectée</h3>
-                    <p>Restez connecté et suivez votre activité avec cette montre connectée moderne.</p>
-                    <span class="price">30000FCFA</span>
-                    <a href="https://wa.me/237695947432?text=Bonjour, je suis intéressé par la Montre Connectée." class="btn">Achetez maintenant</a>
-                </div>
+              @foreach ($products as $product)
+                @include('partials._product')
+              @endforeach
             </div>
         </section>
         
