@@ -105,7 +105,7 @@ button[type="submit"]:hover:not(:disabled) {
     color: red;
     font-size: 12px;
     margin-top: 5px;
-    display: none;
+    /* display: none; */
 }
 
 #password-criteria {
