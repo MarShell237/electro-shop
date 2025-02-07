@@ -38,7 +38,7 @@
                 </div>
                 <button type="submit" class="btn">Se connecter</button>
             </form>
-            <p class="signup-text">Vous n'avez pas de compte ? <a href="./signup.html" class="signup-link">Inscrivez-vous</a></p>
+            <p class="signup-text">Vous n'avez pas de compte ? <a href="{{ url('signup') }}" class="signup-link">Inscrivez-vous</a></p>
         </div>
     </div>
     {{-- <script src="../js/index.js"></script> --}}

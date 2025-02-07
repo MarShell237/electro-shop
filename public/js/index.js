@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.getElementById('signup-form').addEventListener('submit', (e) => {
-        e.preventDefault();
+        // e.preventDefault();
 
         const emailValid = validateEmail(emailInput.value);
         const passwordValid = validatePassword(passwordInput.value);
@@ -142,9 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmPasswordError.style.display = passwordsMatch ? 'none' : 'block';
         confirmPasswordError.textContent = passwordsMatch ? '' : 'Les mots de passe ne correspondent pas';
 
-        if (emailValid && passwordValid && passwordsMatch && usernameInput.value) {
-            alert('Inscription réussie !');
-        }
+        // if (emailValid && passwordValid && passwordsMatch && usernameInput.value) {
+        //     alert('Inscription réussie !');
+        // }
     });
 });
 
