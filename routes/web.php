@@ -12,8 +12,11 @@ Route::post('signup', [AuthController::class,'doSignup']);
 Route::get('login', [AuthController::class,'login'])->name('login');
 Route::post('login', [AuthController::class,'doLogin']);
 Route::delete('logout', [AuthController::class,'logout']);
+Route::get('product/filter/{category}',[HomeController::class,'filterCategory']);
+Route::post('product/filter', [HomeController::class,'filter'])->name('product.filter');
+
 
 Route::middleware('auth')->group(function(){
-  Route::resource('product', ProductController::class);
-  Route::resource('category', CategoryController::class);
+  Route::resource('product', ProductController::class)->except(['show']);
+  Route::resource('category', CategoryController::class)->except(['show']);
 });

@@ -1,5 +1,5 @@
 <div class="product-card">
-  <img src="storage/{{ $product->image }}" alt="Smartphone">
+  <img src="/storage/{{ $product->image }}" alt="{{ $product->name }}">
   <h3>{{ $product->name }}</h3>
   <p>{{ $product->description }}</p>
   <span class="price">{{ $product->price }}FCFA</span>

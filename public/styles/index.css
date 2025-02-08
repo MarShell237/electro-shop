@@ -512,6 +512,10 @@ nav {
     cursor: pointer;
 }
 
+#category-list a{
+  all: unset;
+}
+
 #category-list {
     list-style: none;
     padding: 0;

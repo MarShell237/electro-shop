@@ -21,10 +21,13 @@
         </button>
         <nav>
             <ul>
-                <div class="search-bar">
-                    <input type="text" placeholder="Rechercher du produit...">
-                    <button><i class="fas fa-search"></i></button>
-                </div>
+                <form action="{{ route('product.filter') }}" method="POST">
+                  @csrf
+                  <div class="search-bar">
+                      <input type="text" placeholder="Rechercher du produit..." name="searchValue">
+                      <button><i class="fas fa-search"></i></button>
+                  </div>
+                </form>
                 <li><a href="#hero"><i class="fas fa-home"></i> <span>Accueil</span></a></li>
                 <li><a href="#product"><i class="fas fa-star"></i> <span>Produits</span></a></li>
                 <li><a href="{{ url('login') }}"><i class="fas fa-sign-in-alt"></i> <span>connexion</span></a></li>
@@ -39,19 +42,10 @@
         <button id="close-sidebar">&times;</button>
         <h2>Catégories</h2>
         <ul id="category-list">
-          <li data-category="all">Tous</li>
+          <a href="{{ url('/') }}"><li data-category="all">Tous</li></a>
           @foreach ($categories as $category)
-            <li data-category="smartphones">{{ $category->name }}</li>
+            <a href="{{ url('product/filter',$category) }}"><li data-category="smartphones">{{ $category->name }}</li></a>
           @endforeach
-            {{-- <li data-category="all">Tous</li>
-            <li data-category="smartphones">Smartphones</li>
-            <li data-category="laptops">Ordinateurs Portables</li>
-            <li data-category="tablets">Tablettes</li>
-            <li data-category="accessories">Accessoires</li>
-            <li data-category="headphones">Casques Audio</li>
-            <li data-category="tv">Télévisions</li>
-            <li data-category="gaming">Gaming</li>
-            <li data-category="wearables">Objets Connectés</li> --}}
         </ul>
     </aside>
 
@@ -84,11 +78,11 @@
             @foreach ($products as $table_product)
               @if ($table_product["category_products"]->isNotEmpty())
                 <h2>{{ $table_product["category_name"] }}</h2>
+                <div class="products-grid">
                 @foreach($table_product["category_products"] as $product)
-                  <div class="products-grid">
                     @include('partials._product')
+                    @endforeach
                   </div>
-                @endforeach
               @endif
             @endforeach
         </section>
